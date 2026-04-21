@@ -144,7 +144,7 @@
         body.light .skill-tag { background: #eaeef2; color: #57606a; }
     </style>
 </head>
-<body>
+<body class="light">
     <header class="site-header">
         <div class="container header-content">
             <a href="/" class="logo">Shubham<span>.ai</span></a>
@@ -157,7 +157,7 @@
                 <a href="#skills">Skills</a>
                 <a href="#news">News</a>
             </nav>
-            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">☽</button>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">☀</button>
         </div>
     </header>
 
@@ -280,13 +280,15 @@
         let darkMode = true;
         
         function toggleTheme() {
-            darkMode = !darkMode;
-            if (darkMode) {
+            const isLight = document.body.classList.contains('light');
+            if (isLight) {
                 document.body.classList.remove('light');
                 document.querySelector('.theme-toggle').textContent = '☽';
+                localStorage.setItem('theme', 'dark');
             } else {
                 document.body.classList.add('light');
                 document.querySelector('.theme-toggle').textContent = '☀';
+                localStorage.setItem('theme', 'light');
             }
         }
         
