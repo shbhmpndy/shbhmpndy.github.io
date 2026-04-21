@@ -18,18 +18,40 @@
         .nav-links a:hover { color: var(--text); }
         .theme-toggle { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; width: 40px; height: 40px; cursor: pointer; color: var(--text2); font-size: 18px; }
         
-        .post { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        .post-title { font-size: 1.8rem; margin-bottom: 12px; }
-        .post-meta { color: var(--text2); font-size: 0.9rem; margin-bottom: 20px; }
-        .post-content { font-size: 1.1rem; line-height: 1.8; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: var(--accent); text-decoration: none; }
+        /* Blog Post Cards */
+        .blog-post { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; cursor: pointer; }
+        .blog-post:hover { border-color: var(--accent); }
+        .blog-post.expanded { border-color: var(--accent); }
+        .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .post-title { font-size: 1.3rem; font-weight: 600; flex: 1; }
+        .post-date { color: var(--text2); font-size: 0.9rem; }
+        .post-excerpt { color: var(--text2); margin-bottom: 12px; }
+        .post-full { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+        .blog-post.expanded .post-full { display: block; }
+        .post-full h3 { margin: 20px 0 12px; font-size: 1.1rem; }
+        .post-full p { margin-bottom: 16px; color: var(--text2); }
+        .post-full ul, .post-full ol { margin: 0 0 16px 20px; color: var(--text2); }
+        .post-full li { margin-bottom: 8px; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tag { background: var(--bg); color: var(--text2); padding: 4px 12px; border-radius: 16px; font-size: 0.8rem; }
+        .toggle-hint { color: var(--accent); font-size: 0.85rem; margin-top: 12px; }
+        .blog-post.expanded .toggle-hint { display: none; }
+        
+        footer { padding: 40px 0; text-align: center; color: var(--text2); border-top: 1px solid var(--border); margin-top: 40px; }
         
         /* Light mode */
         body.light { background: #fff; color: #24292f; }
         body.light .header { border-color: #d0d7de; }
         body.light .logo { color: #24292f; }
         body.light .nav-links a { color: #57606a; }
-        body.light .post { border-color: #d0d7de; }
+        body.light .blog-post { background: #f6f8fa; border-color: #d0d7de; }
+        body.light .blog-post:hover { border-color: #0969da; }
+        body.light .post-title { color: #24292f; }
+        body.light .post-date { color: #6e7781; }
+        body.light .post-excerpt, body.light .post-full p { color: #57606a; }
+        body.light .tag { background: #eaeef2; color: #57606a; }
+        body.light .post-full { border-color: #d0d7de; }
+        body.light footer { border-color: #d0d7de; }
         body.light .theme-toggle { background: #f6f8fa; border-color: #d0d7de; color: #57606a; }
     </style>
 </head>
@@ -39,79 +61,109 @@
             <a href="index.html" class="logo">Shubham<span>.ai</span></a>
             <div class="nav-right">
                 <nav class="nav-links">
-<a href="index.html" onclick="localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark')">Home</a>
-                <a href="index.html#blog">All Posts</a>
+                    <a href="index.html">Home</a>
                 </nav>
                 <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">☽</button>
             </div>
         </div>
         
-        <div class="post">
-            <a href="index.html#blog" class="back-link">← Back to all posts</a>
-            <h1 class="post-title">Building Production ML Systems: Lessons Learned</h1>
-            <p class="post-meta">January 2026 · 5 min read · MLOps, Machine Learning</p>
-            <div class="post-content">
-                <p style="margin-bottom:16px">Building ML systems that work reliably in production is fundamentally different from building models in Jupyter notebooks. After years of deploying ML at scale, here are the key lessons I've learned.</p>
-                
-                <h3 style="margin:24px 0 12px">1. Monitoring is Everything</h3>
-                <p style="margin-bottom:16px">The moment your model hits production, the real work begins. You need to monitor data drift, model performance, and system health. Set up alerts for when metrics deviate from expected ranges.</p>
-                
-                <h3 style="margin:24px 0 12px">2. Data Quality is Foundation</h3>
-                <p style="margin-bottom:16px">Garbage in, garbage out. Implement robust data validation at every pipeline stage. Bad data will silently degrade your model's performance.</p>
-                
-                <h3 style="margin:24px 0 12px">3. Keep It Simple</h3>
-                <p style="margin-bottom:16px">Start with the simplest model that works. Complex architectures are harder to debug and maintain. Iterate based on real performance metrics, not theoretical improvements.</p>
-                
-                <h3 style="margin:24px 0 12px">4. Feature Stores Matter</h3>
-                <p style="margin-bottom:16px">Using a feature store ensures consistency between training and serving. It also makes it easy to share and reuse features across teams.</p>
-                
-                <h3 style="margin:24px 0 12px">Conclusion</h3>
-                <p>Production ML is as much about engineering as it is about algorithms. Focus on reliability, observability, and maintainability from day one.</p>
+        <h1 style="font-size:2rem;margin-bottom:8px">Blog</h1>
+        <p style="color:var(--text2);margin-bottom:32px">Thoughts on machine learning, production systems, and software engineering.</p>
+        
+        <div class="blog-list">
+            <!-- Post 1 -->
+            <div class="blog-post" onclick="togglePost(this)">
+                <div class="post-header">
+                    <h2 class="post-title">Building Production ML Systems: Lessons Learned</h2>
+                    <span class="post-date">Jan 2026</span>
+                </div>
+                <p class="post-excerpt">Key takeaways from building ML systems that actually work in production. From model monitoring to data pipelines.</p>
+                <div class="tags">
+                    <span class="tag">MLOps</span>
+                    <span class="tag">Machine Learning</span>
+                </div>
+                <p class="toggle-hint">Click to read more →</p>
+                <div class="post-full">
+                    <p>Building ML systems that work reliably in production is fundamentally different from building models in Jupyter notebooks. After years of deploying ML at scale, here are the key lessons I've learned.</p>
+                    
+                    <h3>1. Monitoring is Everything</h3>
+                    <p>The moment your model hits production, the real work begins. You need to monitor data drift, model performance, and system health. Set up alerts for when metrics deviate from expected ranges.</p>
+                    
+                    <h3>2. Data Quality is Foundation</h3>
+                    <p>Garbage in, garbage out. Implement robust data validation at every pipeline stage. Bad data will silently degrade your model's performance.</p>
+                    
+                    <h3>3. Keep It Simple</h3>
+                    <p>Start with the simplest model that works. Complex architectures are harder to debug and maintain. Iterate based on real performance metrics, not theoretical improvements.</p>
+                    
+                    <h3>4. Feature Stores Matter</h3>
+                    <p>Using a feature store ensures consistency between training and serving. It also makes it easy to share and reuse features across teams.</p>
+                    
+                    <h3>Conclusion</h3>
+                    <p>Production ML is as much about engineering as it is about algorithms. Focus on reliability, observability, and maintainability from day one.</p>
+                </div>
+            </div>
+            
+            <!-- Post 2 -->
+            <div class="blog-post" onclick="togglePost(this)">
+                <div class="post-header">
+                    <h2 class="post-title">Understanding LLMs: A Practical Guide</h2>
+                    <span class="post-date">Dec 2025</span>
+                </div>
+                <p class="post-excerpt">A deep dive into Large Language Models and how to work with them effectively.</p>
+                <div class="tags">
+                    <span class="tag">NLP</span>
+                    <span class="tag">LLMs</span>
+                </div>
+                <p class="toggle-hint">Click to read more →</p>
+                <div class="post-full">
+                    <p>Large Language Models have revolutionized natural language processing. Here's a practical guide to understanding and working with them.</p>
+                    
+                    <h3>How LLMs Work</h3>
+                    <p>At their core, LLMs predict the next token given previous tokens. They're trained on massive amounts of text data to learn statistical patterns in language.</p>
+                    
+                    <h3>Fine-tuning vs Prompting</h3>
+                    <p>Start with prompting - it's faster and cheaper. Fine-tune only when you need specific behavior that's hard to prompt engineer.</p>
+                    
+                    <h3>Practical Tips</h3>
+                    <ul>
+                        <li>Use clear, specific prompts</li>
+                        <li>Provide examples in your prompts</li>
+                        <li>Break complex tasks into steps</li>
+                        <li>Validate outputs thoroughly</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Post 3 -->
+            <div class="blog-post" onclick="togglePost(this)">
+                <div class="post-header">
+                    <h2 class="post-title">From Notebook to Production: ML Pipeline 101</h2>
+                    <span class="post-date">Nov 2025</span>
+                </div>
+                <p class="post-excerpt">How to bridge the gap between ML experiments in notebooks and production systems.</p>
+                <div class="tags">
+                    <span class="tag">MLOps</span>
+                    <span class="tag">Python</span>
+                </div>
+                <p class="toggle-hint">Click to read more →</p>
+                <div class="post-full">
+                    <p>The gap between ML in notebooks and production systems is often underestimated. Here's how to build robust ML pipelines.</p>
+                    
+                    <h3>Key Steps</h3>
+                    <ol>
+                        <li>Containerize your training code</li>
+                        <li>Set up CI/CD for ML workflows</li>
+                        <li>Implement model versioning</li>
+                        <li>Add automated testing</li>
+                        <li>Set up monitoring and alerts</li>
+                    </ol>
+                    
+                    <p>Remember: Production ML is software engineering. Apply the same rigor you'd use for any production system.</p>
+                </div>
             </div>
         </div>
         
-        <div class="post">
-            <h1 class="post-title">Understanding LLMs: A Practical Guide</h1>
-            <p class="post-meta">December 2025 · 7 min read · NLP, LLMs</p>
-            <div class="post-content">
-                <p style="margin-bottom:16px">Large Language Models have revolutionized natural language processing. Here's a practical guide to understanding and working with them.</p>
-                
-                <h3 style="margin:24px 0 12px">How LLMs Work</h3>
-                <p style="margin-bottom:16px">At their core, LLMs predict the next token given previous tokens. They're trained on massive amounts of text data to learn statistical patterns in language.</p>
-                
-                <h3 style="margin:24px 0 12px">Fine-tuning vs Prompting</h3>
-                <p style="margin-bottom:16px">Start with prompting - it's faster and cheaper. Fine-tune only when you need specific behavior that's hard to prompt engineer.</p>
-                
-                <h3 style="margin:24px 0 12px">Practical Tips</h3>
-                <ul style="margin-left:20px;margin-bottom:16px">
-                    <li>Use clear, specific prompts</li>
-                    <li>Provide examples in your prompts</li>
-                    <li>Break complex tasks into steps</li>
-                    <li>Validate outputs thoroughly</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="post">
-            <h1 class="post-title">From Notebook to Production: ML Pipeline 101</h1>
-            <p class="post-meta">November 2025 · 6 min read · MLOps, Python</p>
-            <div class="post-content">
-                <p style="margin-bottom:16px">The gap between ML in notebooks and production systems is often underestimated. Here's how to build robust ML pipelines.</p>
-                
-                <h3 style="margin:24px 0 12px">Key Steps</h3>
-                <ol style="margin-left:20px;margin-bottom:16px">
-                    <li>Containerize your training code</li>
-                    <li>Set up CI/CD for ML workflows</li>
-                    <li>Implement model versioning</li>
-                    <li>Add automated testing</li>
-                    <li>Set up monitoring and alerts</li>
-                </ol>
-                
-                <p>Remember: Production ML is software engineering. Apply the same rigor you'd use for any production system.</p>
-            </div>
-        </div>
-        
-        <footer style="padding:40px 0;text-align:center;color:var(--text2);border-top:1px solid var(--border)">
+        <footer>
             <p>© 2026 Shubham Pandey</p>
         </footer>
     </div>
@@ -135,6 +187,10 @@
                 localStorage.setItem('theme', 'light');
                 btn.textContent = '☀';
             }
+        }
+        
+        function togglePost(element) {
+            element.classList.toggle('expanded');
         }
     </script>
 </body>
