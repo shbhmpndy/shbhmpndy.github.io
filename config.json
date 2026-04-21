@@ -1,0 +1,304 @@
+{
+  "site": {
+    "title": "Shubham Pandey",
+    "description": "Machine Learning Engineer at Meta with 8+ years of experience in production ML systems",
+    "url": "https://shbhmpndy.github.io"
+  },
+  "header": {
+    "greeting": "Hi, I'm Shubham",
+    "tagline": "Machine Learning Engineer @ Meta | Building Production AI Systems"
+  },
+  "socials": [
+    { "name": "GitHub", "url": "https://github.com/shbhmpndy" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/shbhmpndy/" },
+    { "name": "Google Scholar", "url": "https://scholar.google.com/citations?user=OzgvvF0AAAAJ&hl=en" }
+  ],
+  "about": {
+    "summary": "I build end-to-end AI systems that work in production, not just in notebooks.",
+    "paragraphs": [
+      "With 8+ years of experience in machine learning and data engineering, I specialize in NLP, Large Language Models (LLMs), MLOps, and building scalable AI pipelines.",
+      "Currently working as a Machine Learning Engineer at Meta, contributing to next-generation AI products. Previously led ML initiatives at Delaware North, built AI solutions at Tredence and Wipro, and completed my Master's in Artificial Intelligence from University at Buffalo.",
+      "I'm passionate about bridging the gap between research and real-world AI deployment, with a focus on building systems that are reliable, scalable, and make real impact."
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "jobs": [
+      {
+        "role": "Machine Learning Engineer",
+        "company": "Meta",
+        "location": "SF Bay Area, CA",
+        "date": "Jan 2026 - Present",
+        "description": [
+          "Working on production ML systems for Meta's AI products",
+          "Building and optimizing ML pipelines at scale",
+          "Contributing to next-generation AI products and features"
+        ]
+      },
+      {
+        "role": "Machine Learning Engineer",
+        "company": "Delaware North",
+        "location": "Greater Boston, MA (Remote)",
+        "date": "Jan 2024 - Jan 2026",
+        "description": [
+          "Led development of ML Observability platform for model monitoring",
+          "Built real-time data pipelines processing 50TB+ data daily",
+          "Implemented NLP solutions for enterprise analytics",
+          "Reduced inference latency by 40% through optimization"
+        ]
+      },
+      {
+        "role": "Data Engineering Intern",
+        "company": "Delaware North",
+        "location": "New York, NY",
+        "date": "May 2023 - Dec 2023",
+        "description": [
+          "Built ETL pipelines for enterprise data warehouse",
+          "Developed automated data quality monitoring systems",
+          "Collaborated with ML team on feature engineering"
+        ]
+      },
+      {
+        "role": "Data Scientist",
+        "company": "Fidelity Investments",
+        "location": "Bengaluru, India",
+        "date": "Jun 2022 - Jul 2022",
+        "description": [
+          "Developed predictive models for financial analytics",
+          "Built dashboards for investment insights"
+        ]
+      },
+      {
+        "role": "Senior Data Scientist",
+        "company": "Tredence Inc.",
+        "location": "Bengaluru, India",
+        "date": "Jul 2021 - Jun 2022",
+        "description": [
+          "Led NLP projects for Fortune 500 clients",
+          "Built voice of customer analytics platforms",
+          "Developed ML models for retail analytics"
+        ]
+      },
+      {
+        "role": "Data Scientist / AI Engineer",
+        "company": "Tredence Inc.",
+        "location": "Bengaluru, India",
+        "date": "Jul 2019 - Jun 2021",
+        "description": [
+          "Developed AI solutions for client engagements",
+          "Built NLP pipelines for text analytics",
+          "Implemented chatbot systems for enterprises"
+        ]
+      },
+      {
+        "role": "ML Engineer",
+        "company": "Wipro Limited",
+        "location": "Bengaluru, India",
+        "date": "Aug 2017 - Jul 2019",
+        "description": [
+          "Built ML models for client projects",
+          "Developed automation solutions",
+          "Worked on natural language processing projects"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "name": "ML Observability Platform",
+        "category": "Industry",
+        "date": "2024 - 2026",
+        "description": [
+          "Built comprehensive ML model monitoring platform at Delaware North",
+          "Features real-time drift detection, model performance metrics, data quality alerts",
+          "Processes telemetry from 100+ models in production"
+        ],
+        "tech": ["Python", "MLflow", "Kafka", "Prometheus", "Grafana", "AWS"]
+      },
+      {
+        "name": "Enterprise Data Pipeline",
+        "category": "Industry",
+        "date": "2023 - 2024",
+        "description": [
+          "Designed and implemented real-time data pipelines processing 50TB+ data daily",
+          "Built ETL workflows with Airflow, integrated with Snowflake",
+          "Reduced data latency from hours to minutes"
+        ],
+        "tech": ["Apache Spark", "Airflow", "Snowflake", "Python", "AWS"]
+      },
+      {
+        "name": "NLP Pipeline for Gartner",
+        "category": "Industry",
+        "date": "2021 - 2022",
+        "description": [
+          "Developed end-to-end NLP pipeline for text analysis and entity extraction at Tredence",
+          "Built custom NER models and sentiment analysis systems",
+          "Served Fortune 500 clients in retail and CPG sectors"
+        ],
+        "tech": ["Python", "BERT", "SpaCy", "FastAPI", "MongoDB"]
+      },
+      {
+        "name": "Package Damage Detection",
+        "category": "Industry",
+        "date": "2020 - 2021",
+        "description": [
+          "Built computer vision system for detecting package damage in logistics",
+          "Used object detection models to identify dents, scratches, and water damage",
+          "Deployed in warehouse environments"
+        ],
+        "tech": ["Python", "YOLO", "OpenCV", "PyTorch", "AWS SageMaker"]
+      },
+      {
+        "name": "SmartOCR Document Processing",
+        "category": "Industry",
+        "date": "2019 - 2021",
+        "description": [
+          "Intelligent document extraction using OCR and NLP",
+          "95% accuracy on structured data extraction from invoices and forms",
+          "Deployed as REST API for enterprise clients"
+        ],
+        "tech": ["Python", "Tesseract", "OpenAI", "LangChain", "Azure"]
+      },
+      {
+        "name": "RL for Ad Bidding",
+        "category": "Academic (UB)",
+        "date": "2022 - 2023",
+        "description": [
+          "Master's thesis on reinforcement learning for online advertising bidding",
+          "Developed deep RL agent optimizing bid strategies in real-time auctions",
+          "Achieved 15% improvement over baseline strategies"
+        ],
+        "tech": ["Python", "PyTorch", "Gym", "RL Algorithms"]
+      },
+      {
+        "name": "GAN Detection Metrics",
+        "category": "Academic (UB)",
+        "date": "2022 - 2023",
+        "description": [
+          "Research project developing metrics for detecting AI-generated images",
+          "Created framework evaluating multiple detection methods",
+          "Proposed improved evaluation benchmarks"
+        ],
+        "tech": ["Python", "PyTorch", "GANs", "Computer Vision"]
+      },
+      {
+        "name": "Facial Image Similarity",
+        "category": "BIT Mesra",
+        "date": "2018 - 2019",
+        "description": [
+          "Face recognition using Siamese networks",
+          "Achieved 92% accuracy on LFW dataset for face verification"
+        ],
+        "tech": ["Python", "OpenCV", "CNN", "Siamese Networks"]
+      },
+      {
+        "name": "Training & Placement Notifier",
+        "category": "BIT Mesra",
+        "date": "2017 - 2018",
+        "description": [
+          "Web application for college T&P cell",
+          "Students view openings, companies post requirements",
+          "Automated notifications for new opportunities"
+        ],
+        "tech": ["HTML/CSS", "PHP", "MySQL", "JavaScript"]
+      }
+    ]
+  },
+  "publications": {
+    "title": "Publications & Patents",
+    "items": [
+      {
+        "title": "Unsupervised paradigm for information extraction from transcripts using BERT",
+        "venue": "ECML PKDD 2021",
+        "link": "https://link.springer.com/chapter/10.1007/978-3-030-86523-4_7",
+        "citation": "16 citations"
+      },
+      {
+        "title": "Delivery issues identification from customer feedback data",
+        "venue": "arXiv 2021",
+        "link": "https://arxiv.org/abs/2101.12345",
+        "citation": "5 citations"
+      },
+      {
+        "title": "Multi-channel feedback analytics for presentation generation",
+        "venue": "US Patent 12,165,179",
+        "link": "https://patents.google.com/patent/US12165179",
+        "citation": "Patent granted 2024"
+      }
+    ]
+  },
+  "leadership": {
+    "title": "Leadership",
+    "items": [
+      {
+        "role": "President",
+        "organization": "UB AI Club",
+        "date": "Nov 2022 - Dec 2023",
+        "description": [
+          "Led club with 200+ members",
+          "Organized workshops on AI/ML topics",
+          "Hosted industry speaker events"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "degree": "M.S. in Artificial Intelligence",
+        "institution": "University at Buffalo",
+        "date": "Aug 2022 - Dec 2023",
+        "details": ["Specialization: AI", "Coursework: NLP, ML, Deep Learning"]
+      },
+      {
+        "degree": "B.Tech in Computer Science",
+        "institution": "Birla Institute of Technology, Mesra",
+        "date": "Jul 2015 - May 2019",
+        "details": ["Computer Science", "Graduated with distinction"]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "categories": [
+      {
+        "name": "AI & Machine Learning",
+        "items": ["NLP", "LLMs", "BERT", "PyTorch", "TensorFlow", "MLOps", "Computer Vision"]
+      },
+      {
+        "name": "Data Engineering",
+        "items": ["Python", "Spark", "Airflow", "Kafka", "PostgreSQL", "MongoDB", "ETL"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "items": ["AWS", "GCP", "Azure", "Docker", "Kubernetes", "CI/CD", "Git"]
+      },
+      {
+        "name": "Tools & Platforms",
+        "items": ["Snowflake", "Databricks", "SageMaker", "Tableau", "Jira"]
+      }
+    ]
+  },
+  "news": {
+    "title": "News",
+    "items": [
+      { "date": "Apr 2026", "title": "Joined Meta as Machine Learning Engineer" },
+      { "date": "Jan 2024", "title": "Promoted to ML Engineer at Delaware North" },
+      { "date": "May 2023", "title": "Started Data Engineering Internship at Delaware North" },
+      { "date": "Dec 2023", "title": "Graduated with MS AI from University at Buffalo" },
+      { "date": "Aug 2022", "title": "Started MS in Artificial Intelligence at UB" },
+      { "date": "Jun 2022", "title": "Data Scientist Internship at Fidelity Investments" },
+      { "date": "Jul 2021", "title": "Promoted to Senior Data Scientist at Tredence" },
+      { "date": "Jul 2019", "title": "Joined Tredence as Data Scientist" },
+      { "date": "Aug 2017", "title": "Joined Wipro as ML Engineer" },
+      { "date": "Jul 2015", "title": "Started B.Tech at BIT Mesra" }
+    ]
+  },
+  "footer": {
+    "tagline": "Let's connect and build something amazing!",
+    "email": "shubhampandey.ai@gmail.com"
+  }
+}
