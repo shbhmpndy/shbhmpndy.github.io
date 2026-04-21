@@ -86,6 +86,10 @@
         /* Blog */
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
         .blog-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+        .blog-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        
+        /* Light mode blog cards */
+        body.light .blog-card:hover { border-color: #0969da; }
         .blog-date { font-size: 0.8rem; color: var(--text3); margin-bottom: 8px; }
         .blog-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
         .blog-content { font-size: 0.95rem; color: var(--text2); }
@@ -196,25 +200,26 @@
     <section id="blog">
         <div class="container">
             <h2 class="section-title">Blog</h2>
+            <p style="margin-bottom:20px;color:var(--text2)">Check out my latest articles on Medium or click any post below to read more.</p>
             <div class="blog-grid">
-                <div class="blog-card">
+                <a href="https://medium.com/@shbhmpndy" target="_blank" class="blog-card" style="text-decoration:none;display:block;color:inherit;">
                     <p class="blog-date">January 2026</p>
                     <h3 class="blog-title">Building Production ML Systems: Lessons Learned</h3>
                     <p class="blog-content">Key takeaways from building ML systems that actually work in production. From model monitoring to data pipelines, here's what I've learned about deploying ML at scale.</p>
                     <div class="blog-tags"><span class="blog-tag">MLOps</span><span class="blog-tag">Machine Learning</span></div>
-                </div>
-                <div class="blog-card">
+                </a>
+                <a href="https://medium.com/@shbhmpndy" target="_blank" class="blog-card" style="text-decoration:none;display:block;color:inherit;">
                     <p class="blog-date">December 2025</p>
                     <h3 class="blog-title">Understanding LLMs: A Practical Guide</h3>
                     <p class="blog-content">A deep dive into Large Language Models and how to fine-tune them for your specific use cases. Covering attention mechanisms, tokenization, and practical implementation tips.</p>
                     <div class="blog-tags"><span class="blog-tag">NLP</span><span class="blog-tag">LLMs</span></div>
-                </div>
-                <div class="blog-card">
+                </a>
+                <a href="https://medium.com/@shbhmpndy" target="_blank" class="blog-card" style="text-decoration:none;display:block;color:inherit;">
                     <p class="blog-date">November 2025</p>
                     <h3 class="blog-title">From Notebook to Production: ML Pipeline 101</h3>
                     <p class="blog-content">How to bridge the gap between ML experiments in notebooks and production systems. Building robust ML pipelines that scale.</p>
                     <div class="blog-tags"><span class="blog-tag">MLOps</span><span class="blog-tag">Python</span></div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
