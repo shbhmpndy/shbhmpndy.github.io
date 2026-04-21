@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-primary: #6366F1;
+  --color-secondary: #818CF8;
+  --color-dark: #1E1B4B;
+  --color-light: #E0E7FF;
+  --color-text: #1F2937;
+  --color-bg: #FAFBFF;
+  --color-stroke: #C7D2FE;
+  --color-strokedark: #312E81;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --animation-fade-in: fadeIn 0.5s ease-in-out;
+  --animation-slide-up: slideUp 0.5s ease-in-out;
+  --animate-line1: line 3s linear infinite;
+  --animate-line2: line 6s linear infinite;
+  --animate-line3: line 9s linear infinite;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: var(--font-sans);
+  background: linear-gradient(135deg, #FAFBFF 0%, #F5F3FF 50%, #EEF2FF 100%);
+  min-height: 100vh;
+}
+
+.dark body {
+  background: linear-gradient(135deg, #0F0D1A 0%, #1E1B4B 50%, #1a1742 100%);
+}
+
+a {
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+@layer components {
+  .container {
+    @apply max-w-6xl mx-auto px-4;
+  }
+  
+  .btn {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200 inline-block;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 text-white hover:bg-gray-700;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold mb-10 text-center relative;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-[-8px] left-1/2 -translate-x-1/2 w-16 h-1 bg-primary rounded-full;
+  }
+
+  .border-primary {
+    @apply border border-primary/20;
+  }
+
+  .card {
+    @apply bg-white/80 dark:bg-dark/60 backdrop-blur-sm rounded-xl shadow-md border border-white/50 dark:border-white/10;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1;
+  }
+} 
+
+@layer base {
+  body {
+    @apply relative z-1 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-violet-400;
+  }
+  
+  .glow-primary {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes line {
+  0%, 100% { transform: translateY(100%); }
+  50% { transform: translateY(0); }
+}

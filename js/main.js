@@ -1,149 +1,64 @@
-;(function () {
-	
-	'use strict';
+// Main Application Module
+import { ConfigManager } from './config-manager.js';
+import { SEOManager } from './seo-manager.js';
+import { ThemeManager } from './theme-manager.js';
+import { LoadingManager } from './loading-manager.js';
+import { SectionManager } from './section-manager.js';
+import { HeaderManager } from './header-manager.js';
+import { GitHubProjectsManager } from './github-projects-manager.js';
+import { FooterManager } from './footer-manager.js';
 
-	var isMobile = {
-		Android: function() {
-			return navigator.userAgent.match(/Android/i);
-		},
-			BlackBerry: function() {
-			return navigator.userAgent.match(/BlackBerry/i);
-		},
-			iOS: function() {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-		},
-			Opera: function() {
-			return navigator.userAgent.match(/Opera Mini/i);
-		},
-			Windows: function() {
-			return navigator.userAgent.match(/IEMobile/i);
-		},
-			any: function() {
-			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-		}
-	};
+class PortfolioApp {
+    constructor() {
+        this.configManager = new ConfigManager();
+        this.seoManager = new SEOManager();
+        this.themeManager = new ThemeManager();
+        this.loadingManager = new LoadingManager();
+        this.sectionManager = new SectionManager(this.configManager);
+        this.headerManager = new HeaderManager();
+        this.githubProjectsManager = new GitHubProjectsManager();
+        this.footerManager = new FooterManager();
+    }
 
-	
-	var fullHeight = function() {
+    async init() {
+        try {
+            // Initialize theme first
+            this.themeManager.init();
 
-		if ( !isMobile.any() ) {
-			$('.js-fullheight').css('height', $(window).height());
-			$(window).resize(function(){
-				$('.js-fullheight').css('height', $(window).height());
-			});
-		}
-	};
+            // Load configuration
+            const config = await this.configManager.loadConfig();
+            if (!config) return;
 
-	// Parallax
-	var parallax = function() {
-		$(window).stellar();
-	};
+            // Update SEO tags first
+            this.seoManager.updateSEOTags(config);
 
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.animate-box').waypoint( function( direction ) {
+            // Update header section
+            this.headerManager.updateHeaderSection(config);
 
-			if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
-				
-				i++;
+            // Update page content from config
+            this.sectionManager.updatePageContent(config);
 
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
+            // Update footer section
+            this.footerManager.updateFooterSection(config);
 
-					$('body .animate-box.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn animated-fast');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft animated-fast');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight animated-fast');
-							} else {
-								el.addClass('fadeInUp animated-fast');
-							}
+            // Conditionally fetch GitHub projects based on feature flag
+            const features = { github_projects: true, ...config.features };
+            if (features.github_projects && config.github_username) {
+                await this.githubProjectsManager.fetchGitHubProjects(config);
+            }
+            
+            // Hide loading screen after all content has loaded
+            this.loadingManager.hideLoadingScreen();
 
-							el.removeClass('item-animate');
-						},  k * 100, 'easeInOutExpo' );
-					});
-					
-				}, 50);
-				
-			}
+        } catch (error) {
+            console.error('Error initializing portfolio:', error);
+            this.loadingManager.hideLoadingScreen(false);
+        }
+    }
+}
 
-		} , { offset: '85%' } );
-	};
-
-
-
-	var goToTop = function() {
-
-		$('.js-gotop').on('click', function(event){
-			
-			event.preventDefault();
-
-			$('html, body').animate({
-				scrollTop: $('html').offset().top
-			}, 500, 'easeInOutExpo');
-			
-			return false;
-		});
-
-		$(window).scroll(function(){
-
-			var $win = $(window);
-			if ($win.scrollTop() > 200) {
-				$('.js-top').addClass('active');
-			} else {
-				$('.js-top').removeClass('active');
-			}
-
-		});
-	
-	};
-
-	var pieChart = function() {
-		$('.chart').easyPieChart({
-			scaleColor: false,
-			lineWidth: 4,
-			lineCap: 'butt',
-			barColor: '#FF9000',
-			trackColor:	"#f5f5f5",
-			size: 160,
-			animate: 1000
-		});
-	};
-
-	var skillsWayPoint = function() {
-		if ($('#fh5co-skills').length > 0 ) {
-			$('#fh5co-skills').waypoint( function( direction ) {
-										
-				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-					setTimeout( pieChart , 400);					
-					$(this.element).addClass('animated');
-				}
-			} , { offset: '90%' } );
-		}
-
-	};
-
-
-	// Loading page
-	var loaderPage = function() {
-		$(".fh5co-loader").fadeOut("slow");
-	};
-
-	
-	$(function(){
-		contentWayPoint();
-		goToTop();
-		loaderPage();
-		fullHeight();
-		parallax();
-		// pieChart();
-		skillsWayPoint();
-	});
-
-
-}());
+// Initialize the application when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const app = new PortfolioApp();
+    app.init();
+});
