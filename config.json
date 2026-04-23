@@ -38,7 +38,7 @@
       {
         "role": "Machine Learning Engineer",
         "company": "Delaware North",
-        "location": "Greater Boston, MA (Remote)",
+        "location": "Greater Boston, MA",
         "date": "Jan 2024 - Jan 2026",
         "description": [
           "Led development of ML Observability platform for model monitoring",
@@ -50,7 +50,7 @@
       {
         "role": "Data Engineering Intern",
         "company": "Delaware North",
-        "location": "New York, NY",
+        "location": "Buffalo, NY",
         "date": "May 2023 - Dec 2023",
         "description": [
           "Built ETL pipelines for enterprise data warehouse",
@@ -153,7 +153,7 @@
       {
         "name": "SmartOCR Document Processing",
         "category": "Industry",
-        "date": "2019 - 2021",
+        "date": "2017 - 2018",
         "description": [
           "Intelligent document extraction using OCR and NLP",
           "95% accuracy on structured data extraction from invoices and forms",
@@ -186,7 +186,7 @@
       {
         "name": "Facial Image Similarity",
         "category": "BIT Mesra",
-        "date": "2018 - 2019",
+        "date": "2016 - 2017",
         "description": [
           "Face recognition using Siamese networks",
           "Achieved 92% accuracy on LFW dataset for face verification"
@@ -196,7 +196,7 @@
       {
         "name": "Training & Placement Notifier",
         "category": "BIT Mesra",
-        "date": "2017 - 2018",
+        "date": "2016 - 2017",
         "description": [
           "Web application for college T&P cell",
           "Students view openings, companies post requirements",
@@ -256,7 +256,7 @@
       {
         "degree": "B.Tech in Computer Science",
         "institution": "Birla Institute of Technology, Mesra",
-        "date": "Jul 2015 - May 2019",
+        "date": "Jul 2013 - Jul 2017",
         "details": ["Computer Science", "Graduated with distinction"]
       }
     ]
@@ -285,20 +285,20 @@
   "news": {
     "title": "News",
     "items": [
-      { "date": "Apr 2026", "title": "Joined Meta as Machine Learning Engineer" },
+      { "date": "Jan 2026", "title": "Joined Meta as Machine Learning Engineer" },
       { "date": "Jan 2024", "title": "Promoted to ML Engineer at Delaware North" },
-      { "date": "May 2023", "title": "Started Data Engineering Internship at Delaware North" },
       { "date": "Dec 2023", "title": "Graduated with MS AI from University at Buffalo" },
+      { "date": "May 2023", "title": "Started Data Engineering Internship at Delaware North" },
       { "date": "Aug 2022", "title": "Started MS in Artificial Intelligence at UB" },
-      { "date": "Jun 2022", "title": "Data Scientist Internship at Fidelity Investments" },
+      { "date": "Jun 2022", "title": "Joined as Data Scientist at Fidelity Investments" },
       { "date": "Jul 2021", "title": "Promoted to Senior Data Scientist at Tredence" },
       { "date": "Jul 2019", "title": "Joined Tredence as Data Scientist" },
       { "date": "Aug 2017", "title": "Joined Wipro as ML Engineer" },
-      { "date": "Jul 2015", "title": "Started B.Tech at BIT Mesra" }
+      { "date": "Jul 2017", "title": "Graduated with B.Tech in Computer Science from BIT Mesra" }
     ]
   },
   "footer": {
     "tagline": "Let's connect and build something amazing!",
-    "email": "shubhampandey.ai@gmail.com"
+    "email": "shbhmpndy@hotmail.com"
   }
 }
