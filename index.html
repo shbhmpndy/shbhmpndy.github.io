@@ -47,6 +47,10 @@
         .section-title { font-size: 1.75rem; font-weight: 600; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
         .section-title::before { content: ''; width: 5px; height: 28px; background: var(--accent); border-radius: 3px; }
         
+        /* Experience cards */
+        .exp-header { display: flex; align-items: center; gap: 12px; }
+        .exp-logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; background: #fff; padding: 4px; }
+        
         /* Cards */
         .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
         .card:hover { border-color: var(--accent); transform: translateY(-2px); }
@@ -142,6 +146,7 @@
         /* Light mode tags */
         body.light .blog-tag { background: #eaeef2; color: #57606a; }
         body.light .skill-tag { background: #eaeef2; color: #57606a; }
+        body.light .exp-logo { background: #fff; }
     </style>
 </head>
 <body class="light">
@@ -304,7 +309,7 @@
                 document.getElementById('experience-content').innerHTML = c.experience.jobs.map(job => `
                     <div class="card">
                         <div class="card-header">
-                            <div><h3 class="card-title">${job.role}</h3><p class="card-company">${job.company}${job.location ? ' | ' + job.location : ''}</p></div>
+                            <div class="exp-header"><img src="${job.logo}" class="exp-logo" onerror="this.style.display='none'" alt="${job.company}"><div><h3 class="card-title">${job.role}</h3><p class="card-company">${job.company}${job.location ? ' | ' + job.location : ''}</p></div></div>
                             <span class="card-date">${job.date}</span>
                         </div>
                         <ul class="card-list">${job.description.map(d => `<li>${d}</li>`).join('')}</ul>
