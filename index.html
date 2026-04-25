@@ -240,6 +240,13 @@
         </div>
     </section>
 
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div id="education-content"></div>
+        </div>
+    </section>
+
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Skills</h2>
@@ -333,6 +340,17 @@
                         <p class="pub-venue">${p.venue}</p>
                         <p class="pub-citation">${p.citation}</p>
                         ${p.link ? `<a href="${p.link}" target="_blank" class="pub-link">View →</a>` : ''}
+                    </div>
+                `).join('');
+                
+                // Education
+                document.getElementById('education-content').innerHTML = c.education.items.map(edu => `
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="exp-header">${edu.logo ? `<img src="${edu.logo}" class="exp-logo" onerror="this.style.display='none'" alt="${edu.institution}">` : ''}<div><h3 class="card-title">${edu.degree}</h3><p class="card-company">${edu.institution}</p></div></div>
+                            <span class="card-date">${edu.date}</span>
+                        </div>
+                        <ul class="card-list">${edu.details.map(d => `<li>${d}</li>`).join('')}</ul>
                     </div>
                 `).join('');
                 

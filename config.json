@@ -256,12 +256,14 @@
       {
         "degree": "M.S. in Artificial Intelligence",
         "institution": "University at Buffalo",
+        "logo": "assets/logos/buffalo.png",
         "date": "Aug 2022 - Dec 2023",
         "details": ["Specialization: AI", "Coursework: NLP, ML, Deep Learning"]
       },
       {
         "degree": "B.Tech in Computer Science",
         "institution": "Birla Institute of Technology, Mesra",
+        "logo": "assets/logos/bit-mesra.png",
         "date": "Jul 2013 - Jul 2017",
         "details": ["Computer Science", "Graduated with distinction"]
       }
