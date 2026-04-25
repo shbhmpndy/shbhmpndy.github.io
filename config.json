@@ -27,9 +27,7 @@
       {
         "role": "Machine Learning Engineer",
         "company": "Meta",
-        "initials": "M",
-        "color": "#0668E1",
-        "location": "SF Bay Area, CA",
+        "logo": "assets/logos/meta.png",
         "date": "Jan 2026 - Present",
         "description": [
           "Working on production ML systems for Meta's AI products",
@@ -40,8 +38,7 @@
       {
         "role": "Machine Learning Engineer",
         "company": "Delaware North",
-        "initials": "DN",
-        "color": "#C8102E",
+        "logo": "assets/logos/delaware-north.png",
         "location": "Greater Boston, MA",
         "date": "Jan 2024 - Jan 2026",
         "description": [
@@ -54,8 +51,7 @@
       {
         "role": "Data Engineering Intern",
         "company": "Delaware North",
-        "initials": "DN",
-        "color": "#C8102E",
+        "logo": "assets/logos/delaware-north.png",
         "location": "Buffalo, NY",
         "date": "May 2023 - Dec 2023",
         "description": [
@@ -67,8 +63,7 @@
       {
         "role": "Data Scientist",
         "company": "Fidelity Investments",
-        "initials": "FI",
-        "color": "#497A32",
+        "logo": "assets/logos/fidelity.png",
         "location": "Bengaluru, India",
         "date": "Jun 2022 - Jul 2022",
         "description": [
@@ -79,8 +74,7 @@
       {
         "role": "Senior Data Scientist",
         "company": "Tredence Inc.",
-        "initials": "TR",
-        "color": "#E05C2A",
+        "logo": "assets/logos/tredence.png",
         "location": "Bengaluru, India",
         "date": "Jul 2021 - Jun 2022",
         "description": [
@@ -92,8 +86,7 @@
       {
         "role": "Data Scientist / AI Engineer",
         "company": "Tredence Inc.",
-        "initials": "TR",
-        "color": "#E05C2A",
+        "logo": "assets/logos/tredence.png",
         "location": "Bengaluru, India",
         "date": "Jul 2019 - Jun 2021",
         "description": [
@@ -105,8 +98,7 @@
       {
         "role": "ML Engineer",
         "company": "Wipro Limited",
-        "initials": "W",
-        "color": "#4B2898",
+        "logo": "assets/logos/wipro.png",
         "location": "Bengaluru, India",
         "date": "Aug 2017 - Jul 2019",
         "description": [

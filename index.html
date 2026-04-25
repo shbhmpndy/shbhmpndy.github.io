@@ -310,7 +310,7 @@
                 document.getElementById('experience-content').innerHTML = c.experience.jobs.map(job => `
                     <div class="card">
                         <div class="card-header">
-                            <div class="exp-header">${job.initials ? `<div class="exp-initials" style="background:${job.color}">${job.initials}</div>` : ''}<div><h3 class="card-title">${job.role}</h3><p class="card-company">${job.company}${job.location ? ' | ' + job.location : ''}</p></div></div>
+                            <div class="exp-header">${job.logo ? `<img src="${job.logo}" class="exp-logo" onerror="this.style.display='none'" alt="${job.company}">` : job.initials ? `<div class="exp-initials" style="background:${job.color}">${job.initials}</div>` : ''}<div><h3 class="card-title">${job.role}</h3><p class="card-company">${job.company}${job.location ? ' | ' + job.location : ''}</p></div></div>
                             <span class="card-date">${job.date}</span>
                         </div>
                         <ul class="card-list">${job.description.map(d => `<li>${d}</li>`).join('')}</ul>
