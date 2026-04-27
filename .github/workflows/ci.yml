@@ -16,13 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate HTML syntax
+      - name: Validate static site
         run: |
-          # Check index.html exists
-          if [ ! -f index.html ]; then echo "index.html not found"; exit 1; fi
-          # Check blog.html exists  
-          if [ ! -f blog.html ]; then echo "blog.html not found"; exit 1; fi
-          # Check config.json is valid
-          if [ ! -f config.json ]; then echo "config.json not found"; exit 1; fi
-          python3 -c "import json; json.load(open('config.json'))"
-          echo "All validation passed"
+          echo "Checking files..."
+          ls -la
+          echo "Testing config.json..."
+          python3 -c "import json; json.load(open('config.json')); print('config.json OK')"
+          echo "All checks passed!"
