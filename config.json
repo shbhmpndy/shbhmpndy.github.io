@@ -103,19 +103,6 @@
         ]
       },
       {
-        "role": "ML Engineer",
-        "company": "Wipro Limited",
-        "logo": "assets/logos/wipro.png",
-        "location": "Bengaluru, India",
-        "date": "Aug 2017 - Jul 2019",
-        "description": [
-          "ML Models: Built production ML models for client projects across domains",
-          "Automation Solutions: Developed automation solutions reducing manual effort by 60%+",
-          "NLP Projects: Worked on natural language processing projects for enterprise text extraction",
-          "Career Launch: Started ML career journey, building foundation for further specialization"
-        ]
-      },
-      {
         "role": "Data Scientist / AI Engineer",
         "company": "Tredence Inc.",
         "logo": "assets/logos/tredence.png",
