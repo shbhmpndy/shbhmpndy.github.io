@@ -28,11 +28,13 @@
         "role": "Machine Learning Engineer",
         "company": "Meta",
         "logo": "assets/logos/meta.png",
+        "location": "SF Bay Area, CA",
         "date": "Jan 2026 - Present",
         "description": [
-          "Working on production ML systems for Meta's AI products",
-          "Building and optimizing ML pipelines at scale",
-          "Contributing to next-generation AI products and features"
+          "Sequence & Features Optimization: Building ML solutions to solve capacity crunch by optimizing feature storage & compute through event-based feature packing and lossless entity packing — reducing features by ~25% while preserving information",
+          "Accelerated Feature Offboarding: Led A/B tests to accelerate pruning of hard-zero/deprecated features, saving feature space via status-based offboarding and ROI-based conditional zero-out for ads",
+          "Delta Model Caching: Developed offline & online testing frameworks to validate caching hypotheses, deployed production changes reducing compute/storage by analyzing dark data and prediction patterns",
+          "AI-Native Development: Leveraging Claude, Codex, and internal AI agents to accelerate development cycles and boost productivity across the entire ML pipeline"
         ]
       },
       {
